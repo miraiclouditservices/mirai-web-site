@@ -35,7 +35,6 @@ function Nodes() {
         ]);
         return (
           <line key={`l${i}`}>
-            {/* @ts-expect-error r3f primitive */}
             <primitive object={geom} attach="geometry" />
             <lineBasicMaterial color="#5aa0ff" transparent opacity={0.35} />
           </line>
