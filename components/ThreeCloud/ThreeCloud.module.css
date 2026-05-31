@@ -1,0 +1,6 @@
+.wrap { padding: clamp(40px, 6vw, 80px) 0 0; background: linear-gradient(180deg, #fff, #f4f8ff); }
+.head { max-width: 720px; margin: 0 auto 1.5rem; text-align: center; }
+.canvas {
+  height: clamp(320px, 50vw, 520px); width: 100%;
+  background: radial-gradient(900px 400px at 50% 100%, rgba(30,107,255,.15), transparent 70%);
+}

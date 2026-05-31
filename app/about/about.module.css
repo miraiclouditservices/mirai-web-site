@@ -1,0 +1,23 @@
+.h1 { max-width: 22ch; margin: .75rem 0 1rem; }
+.lead { max-width: 60ch; }
+.vmGrid { display: grid; gap: 1.25rem; grid-template-columns: 1fr 1fr; }
+.vmCard {
+  background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+.vmCard i { font-size: 1.8rem; color: var(--brand-500); }
+.vmCard h2 { margin: .5rem 0 .75rem; }
+.vmCard p { color: var(--ink-2); margin: 0; }
+
+.whyGrid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 2rem; }
+.whyCard {
+  background: var(--muted); border-radius: 14px; padding: 1.5rem; height: 100%;
+  transition: background .2s ease, transform .2s ease;
+}
+.whyCard:hover { background: var(--brand-50); transform: translateY(-3px); }
+.whyCard i { font-size: 1.5rem; color: var(--brand-500); }
+.whyCard h3 { font-size: 1.05rem; margin: .5rem 0; }
+.whyCard p { color: var(--ink-2); margin: 0; font-size: .95rem; }
+
+@media (max-width: 900px) { .vmGrid, .whyGrid { grid-template-columns: 1fr; } }
+@media (max-width: 1100px) and (min-width: 901px) { .whyGrid { grid-template-columns: repeat(2, 1fr); } }

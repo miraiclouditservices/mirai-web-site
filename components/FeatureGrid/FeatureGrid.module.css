@@ -1,0 +1,392 @@
+.head {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.head h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 0.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.head p {
+  color: #556987;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  margin-top: 0.75rem;
+}
+
+/* Outer wrapper */
+.gridContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Background grid creating 10 cols x 6 rows line structure */
+.bgGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, minmax(105px, 1fr));
+  border-top: 1px solid #f1f3f7;
+  border-left: 1px solid #f1f3f7;
+}
+
+.bgCell {
+  border-bottom: 1px solid #f1f3f7;
+  border-right: 1px solid #f1f3f7;
+  background: #ffffff;
+}
+
+/* Foreground Grid overlay containing actual cells and spanned blocks */
+.fgGrid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, minmax(105px, 1fr));
+  pointer-events: none; /* simple tiles are not pointer blocked, but individual elements can have hover enabled */
+}
+
+/* Simple feature tiles */
+.simpleTile {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.simpleTile:hover {
+  background-color: #fafbfc;
+  transform: scale(1.03);
+}
+
+.tileIcon {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.simpleTile:hover .tileIcon {
+  color: #1e6bff;
+}
+
+.tileName {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #556987;
+  line-height: 1.2;
+}
+
+/* Big Central 2x2 blocks styling */
+.bigBlock {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  z-index: 2;
+  border: 1px solid #eaebef;
+  margin: -1px; /* offset grid border line collapse */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bigBlock:hover {
+  transform: scale(1.015);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+  z-index: 3;
+}
+
+/* Color Coding definitions */
+.blockGather {
+  grid-column: 4 / span 2;
+  grid-row: 2 / span 2;
+  background: #fdf3eb;
+  border-radius: 12px;
+}
+
+.blockVote {
+  grid-column: 6 / span 2;
+  grid-row: 2 / span 2;
+  background: #eaf9f6;
+  border-radius: 12px;
+}
+
+.blockLearn {
+  grid-column: 4 / span 2;
+  grid-row: 4 / span 2;
+  background: #eff2fe;
+  border-radius: 12px;
+}
+
+.blockSite {
+  grid-column: 6 / span 2;
+  grid-row: 4 / span 2;
+  background: #f2fbe9;
+  border-radius: 12px;
+}
+
+/* Footers inside big blocks */
+.blockFooter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.blockFooter strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.blockFooter span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+
+/* Mock Cloud Card */
+.mockCloudCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.mockCloudCard i {
+  font-size: 2.1rem;
+  color: #f27a54;
+  margin-bottom: 0.5rem;
+}
+
+.cloudProgress {
+  width: 100%;
+  height: 6px;
+  background: #f1f3f7;
+  border-radius: 4px;
+  margin-bottom: 0.4rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.cloudBar {
+  height: 100%;
+  background: #f27a54;
+  border-radius: 4px;
+}
+
+.cloudText {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+/* Mock Network Card */
+.mockNetworkCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.networkNodes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.networkNodes i {
+  color: #1abc9c;
+  font-size: 1.15rem;
+}
+
+.netLine {
+  height: 2px;
+  background: #75d5be;
+  flex-grow: 1;
+  max-width: 25px;
+}
+
+.netStatus {
+  font-size: 0.72rem;
+  color: #556987;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1abc9c;
+  display: inline-block;
+  animation: pulse-ring 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.6; }
+}
+
+/* Mock Web Dev Card */
+.mockWebCard {
+  background: #1e293b;
+  border-radius: 12px;
+  height: 90px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+.webHeader {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.webDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.webBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  font-size: 1.80rem;
+  font-family: monospace;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Mock Support Card */
+.mockSupportCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.chatBubble {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #ffffff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px 8px 8px 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  width: fit-content;
+  font-size: 0.72rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.chatAgent {
+  align-self: flex-end;
+  background: #eafcf8;
+  border-radius: 8px 8px 2px 8px;
+  border: 1px solid #c2f0e5;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  /* Scale grid layout down to 5 columns by collapsing simple tiles and stacking big blocks */
+  .bgGrid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(12, minmax(90px, 1fr));
+  }
+  .fgGrid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(12, minmax(90px, 1fr));
+  }
+
+  /* Reset simple tiles to layout flow */
+  .simpleTile {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Relocate Big blocks in 5-col grid */
+  .blockGather {
+    grid-column: 2 / span 2 !important;
+    grid-row: 3 / span 2 !important;
+  }
+  .blockVote {
+    grid-column: 4 / span 2 !important;
+    grid-row: 3 / span 2 !important;
+  }
+  .blockLearn {
+    grid-column: 2 / span 2 !important;
+    grid-row: 7 / span 2 !important;
+  }
+  .blockSite {
+    grid-column: 4 / span 2 !important;
+    grid-row: 7 / span 2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 2 column layout on small devices */
+  .bgGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(20, minmax(85px, 1fr));
+  }
+  .fgGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(20, minmax(85px, 1fr));
+  }
+
+  /* Stack big blocks over full width */
+  .blockGather {
+    grid-column: 1 / span 2 !important;
+    grid-row: 4 / span 2 !important;
+  }
+  .blockVote {
+    grid-column: 1 / span 2 !important;
+    grid-row: 8 / span 2 !important;
+  }
+  .blockLearn {
+    grid-column: 1 / span 2 !important;
+    grid-row: 12 / span 2 !important;
+  }
+  .blockSite {
+    grid-column: 1 / span 2 !important;
+    grid-row: 16 / span 2 !important;
+  }
+}

@@ -1,0 +1,480 @@
+.hero {
+  background: radial-gradient(700px 350px at 100% 0%, rgba(30, 107, 255, 0.08), transparent 70%),
+              linear-gradient(180deg, #f5f8ff 0%, #ffffff 100%);
+  padding: 3rem 0 5rem;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContentWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-500);
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.heroLead {
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: var(--ink-2);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.heroActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Floating Graphic */
+.heroGraphic {
+  position: relative;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(30,107,255,0.04), rgba(0,212,255,0.06));
+  border: 1px dashed var(--brand-300);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.floatingCard {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  animation: float-slow 4s infinite ease-in-out;
+  z-index: 2;
+}
+
+.floater2 {
+  top: 55%;
+  left: 45%;
+  animation-delay: 2s;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.floatingCard i {
+  font-size: 1.8rem;
+  color: var(--brand-500);
+}
+
+.floatingCard div {
+  display: flex;
+  flex-direction: column;
+}
+
+.floatingCard strong {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.floatingCard span {
+  font-size: 0.72rem;
+  color: var(--ink-2);
+}
+
+/* Trust Bar */
+.trustBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.trustBar span {
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.trustBar i {
+  color: var(--brand-500);
+}
+
+/* Stats Section */
+.statsSection {
+  background: #ffffff;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.statCard strong {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--brand-500);
+}
+
+.statCard span {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+/* Section Head */
+.sectionHead {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionHead h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.sectionHead p {
+  color: var(--ink-2);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* Bento Grid */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.bentoCard {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.bentoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(13, 59, 138, 0.05);
+  border-color: var(--brand-300);
+}
+
+.bentoIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--brand-50);
+  color: var(--brand-500);
+  display: grid;
+  place-items: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.bentoCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.bentoCard p {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  line-height: 1.45;
+  margin-bottom: 1.25rem;
+}
+
+.bentoBullets {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+
+.bentoBullets li {
+  font-size: 0.8rem;
+  color: var(--ink);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bentoBullets i {
+  color: var(--brand-500);
+}
+
+/* Expertise Grid */
+.expertiseGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.expertiseLeft h2 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 800;
+  margin-top: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.expertiseLeft p {
+  margin-top: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.providersBadges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.providersBadges span {
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  color: var(--ink);
+}
+
+.expertiseRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.expItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.15rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.expDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-500);
+  margin-top: 0.45rem;
+}
+
+.expItem h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.expItem span {
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+/* FAQ Wrapper */
+.faqWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faqCard {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faqCard:hover {
+  border-color: var(--brand-300);
+  box-shadow: 0 4px 15px rgba(13, 59, 138, 0.02);
+}
+
+.faqHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faqHeader h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+.faqHeader i {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.faqBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease, margin-top 0.2s ease;
+}
+
+.faqOpen {
+  max-height: 200px;
+  margin-top: 0.75rem;
+}
+
+.faqBody p {
+  font-size: 0.88rem;
+  color: var(--ink-2);
+  line-height: 1.5;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+/* Bottom CTA Banner */
+.bottomCtaSection {
+  background: var(--muted);
+  padding: 0 0 120px 0;
+}
+
+.ctaBanner {
+  background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+  border-radius: 24px;
+  padding: 4rem 3rem;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
+}
+
+.ctaBanner h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.ctaBanner p {
+  font-size: 1.1rem;
+  color: var(--brand-50);
+  margin-bottom: 2rem;
+}
+
+.ctaActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ctaCallLink {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.ctaCallLink:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .heroGrid, .expertiseGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bottomCtaSection {
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .ctaBanner {
+    padding: 3rem 1.5rem;
+  }
+  .ctaActions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

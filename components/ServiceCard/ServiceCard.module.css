@@ -1,0 +1,90 @@
+.card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #eaebef;
+  border-radius: 16px;
+  padding: 2.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px -4px rgba(30, 107, 255, 0.08), 0 4px 12px -2px rgba(30, 107, 255, 0.03);
+  border-color: #dbeafe;
+}
+
+.iconWrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(59, 130, 246, 0.06);
+  color: #1e6bff;
+  display: grid;
+  place-items: center;
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .iconWrap {
+  background: #1e6bff;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.5rem;
+  line-height: 1.3;
+}
+
+.desc {
+  color: #556987;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.list li {
+  color: #334155;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1.2;
+}
+
+.list i {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.link {
+  margin-top: auto;
+  color: #1e6bff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+}
+
+.link:hover {
+  gap: 0.6rem;
+  color: #1d4ed8;
+}

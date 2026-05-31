@@ -1,0 +1,70 @@
+/* Global theme tokens + Bootstrap overrides */
+:root {
+  --brand-900: #0a1f44;
+  --brand-700: #0d3b8a;
+  --brand-500: #1e6bff;
+  --brand-300: #5aa0ff;
+  --brand-50: #eaf2ff;
+  --accent: #00d4ff;
+  --ink: #0b1220;
+  --ink-2: #475569;
+  --muted: #f5f7fb;
+  --line: #e6ecf5;
+  --radius: 14px;
+  --shadow-sm: 0 6px 18px rgba(13, 59, 138, .08);
+  --shadow-md: 0 18px 40px rgba(13, 59, 138, .12);
+  --bs-primary: var(--brand-500);
+  --bs-primary-rgb: 30, 107, 255;
+  --bs-body-color: var(--ink);
+  --bs-body-font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --bs-link-color: var(--brand-700);
+  --bs-link-hover-color: var(--brand-500);
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; }
+body {
+  background: #fff;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+h1, h2, h3, h4 { font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.05; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.15; }
+.lead { color: var(--ink-2); }
+
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+.section-tight { padding: clamp(32px, 5vw, 64px) 0; }
+.eyebrow {
+  display: inline-block; font-size: .78rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--brand-500); margin-bottom: .75rem;
+}
+
+.btn-brand {
+  background: var(--brand-500); border: 0; color: #fff;
+  padding: .85rem 1.4rem; border-radius: 999px; font-weight: 600;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  box-shadow: 0 8px 20px rgba(30,107,255,.28);
+}
+.btn-brand:hover { background: var(--brand-700); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 28px rgba(30,107,255,.36); }
+.btn-ghost {
+  background: transparent; color: var(--ink); border: 1px solid var(--line);
+  padding: .8rem 1.3rem; border-radius: 999px; font-weight: 600;
+  transition: border-color .18s ease, color .18s ease, background .18s ease;
+}
+.btn-ghost:hover { border-color: var(--brand-500); color: var(--brand-500); background: var(--brand-50); }
+
+.container-xxl { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* Accessibility */
+:focus-visible { outline: 3px solid var(--brand-300); outline-offset: 2px; border-radius: 6px; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

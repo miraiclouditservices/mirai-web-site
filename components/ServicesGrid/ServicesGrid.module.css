@@ -1,0 +1,648 @@
+.section {
+  background: var(--muted);
+  color: var(--ink);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.head {
+  max-width: 800px;
+  margin: 0 auto 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.yellowEyebrow {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--brand-500);
+  letter-spacing: 0.1em;
+}
+
+.whiteHeading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--ink);
+  margin-top: 0.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.mutedLead {
+  color: var(--ink-2);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  margin-top: 0.75rem;
+}
+
+/* Grid system: Row 1 has 2 cards (span 3), Row 2 has 3 cards (span 2) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.5rem 2.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cardDouble {
+  grid-column: span 3;
+}
+
+.cardTriple {
+  grid-column: span 2;
+}
+
+.category {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--brand-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.titleLarge {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0.15rem 0 0.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.titleSmall {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0.15rem 0 0.25rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+
+.card:hover .titleLarge,
+.card:hover .titleSmall {
+  color: var(--brand-500);
+}
+
+.subtitle {
+  color: var(--ink-2);
+  font-size: 0.88rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+
+/* Mockup Stages using light variables */
+.mockupStage {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  margin-top: auto;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover .mockupStage {
+  border-color: var(--brand-500);
+  box-shadow: 0 10px 25px rgba(30, 107, 255, 0.06);
+}
+
+.stageTop {
+  height: 360px;
+}
+
+.stageBottom {
+  height: 280px;
+}
+
+/* Aligning brand card top-edge to match bottom mockup stages */
+.emptyHeader {
+  height: 94px;
+}
+
+/* Solid Light Blue Card replacing custom yellow */
+.yellowCard {
+  background: var(--brand-50);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 280px;
+  text-decoration: none;
+  color: var(--brand-500);
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  margin-top: auto;
+  border: 1px solid var(--line);
+}
+
+.yellowCard:hover {
+  background: var(--brand-50);
+  border-color: var(--brand-500);
+  transform: translateY(-4px);
+}
+
+.yellowInner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.arrowIcon {
+  width: 38px;
+  height: 38px;
+  background: var(--brand-500);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+/* CSS Rendered Laptop Mockup - Light/Silver Theme */
+.laptopFrame {
+  position: relative;
+  width: 360px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.laptopScreen {
+  width: 340px;
+  height: 205px;
+  background: #ffffff;
+  border: 8px solid #0f172a;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.laptopBase {
+  width: 380px;
+  height: 10px;
+  background: #cbd5e1;
+  border-radius: 0 0 8px 8px;
+  position: relative;
+}
+
+.laptopBase::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background: #94a3b8;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Tilted Laptop Mockups (CSS 3D Perspective) */
+.tiltedLaptopFrame {
+  position: relative;
+  width: 360px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transform: perspective(900px) rotateY(-18deg) rotateX(12deg);
+}
+
+.tiltedLaptopFrame2 {
+  position: relative;
+  width: 290px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transform: perspective(800px) rotateY(15deg) rotateX(10deg);
+}
+
+/* Dashboards Content - Light Theme */
+.cloudDashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+}
+
+.dashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  background: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.dashWindowControls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.dashWindowControls span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dashTab {
+  font-size: 0.62rem;
+  color: var(--ink-2);
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.dashContainer {
+  display: flex;
+  flex-grow: 1;
+}
+
+.dashSidebar {
+  width: 32px;
+  background: var(--muted);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.6rem;
+}
+
+.dashSidebar i {
+  font-size: 0.78rem;
+  color: var(--ink-2);
+}
+
+.dashMain {
+  flex-grow: 1;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashMetricRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dashMetricCard {
+  flex: 1;
+  background: var(--muted);
+  border-radius: 6px;
+  padding: 0.4rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+}
+
+.dashMetricCard span {
+  font-size: 0.55rem;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+
+.dashMetricCard strong {
+  font-size: 0.85rem;
+  color: var(--ink);
+  font-weight: 800;
+  margin-top: 0.1rem;
+}
+
+.cloudSyncBarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.cloudSyncBar {
+  width: 100%;
+  height: 5px;
+  background: var(--line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.cloudSyncBar span {
+  display: block;
+  height: 100%;
+  background: var(--brand-500);
+  border-radius: 3px;
+}
+
+.cloudSyncLabel {
+  font-size: 0.58rem;
+  color: var(--brand-500);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Security Dashboard - Light Theme */
+.securityDashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--ink);
+  padding: 0.75rem;
+  justify-content: space-between;
+  width: 100%;
+  background: #ffffff;
+}
+
+.securityHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.securityHeader i {
+  color: var(--brand-500);
+  font-size: 0.85rem;
+}
+
+.securityScanner {
+  position: relative;
+  height: 60px;
+  border: 1px dashed var(--brand-300);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.radarLine {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--brand-500), transparent);
+  top: 0;
+  animation: radar-sweep 2s infinite linear;
+}
+
+@keyframes radar-sweep {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+.scannerText {
+  font-size: 0.58rem;
+  color: var(--brand-500);
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.securityFooterBadge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: var(--brand-50);
+  color: var(--brand-500);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  border: 1px solid var(--line);
+}
+
+/* Network Dashboard - Light Theme */
+.networkDashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--ink);
+  padding: 0.6rem;
+  justify-content: space-between;
+  width: 100%;
+  background: #ffffff;
+}
+
+.netHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+
+.netHeader i {
+  color: var(--brand-500);
+}
+
+.speedometerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.speedometerContainer i {
+  font-size: 2rem;
+  color: var(--brand-500);
+}
+
+.speedText {
+  display: flex;
+  flex-direction: column;
+}
+
+.speedText strong {
+  font-size: 0.9rem;
+  color: var(--brand-500);
+  font-weight: 800;
+}
+
+.speedText span {
+  font-size: 0.5rem;
+  color: var(--ink-2);
+  font-weight: 700;
+}
+
+/* Phone Mockup Frame - Light Theme */
+.phoneFrame {
+  position: relative;
+  width: 155px;
+  height: 240px;
+  background: #ffffff;
+  border: 5px solid #cbd5e1;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneScreen {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.phoneHeader {
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phoneCamera {
+  width: 38px;
+  height: 7px;
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.phoneBody {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0.4rem;
+  justify-content: space-between;
+}
+
+.phoneAppHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.25rem;
+}
+
+.phoneAppHeader i {
+  color: var(--brand-500);
+}
+
+.chatArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex-grow: 1;
+  padding: 0.4rem 0;
+}
+
+.chatBubble {
+  display: flex;
+  align-items: center;
+  background: var(--muted);
+  padding: 0.35rem 0.55rem;
+  border-radius: 8px 8px 8px 2px;
+  font-size: 0.62rem;
+  color: var(--ink);
+  width: fit-content;
+  max-width: 90%;
+  line-height: 1.2;
+  border: 1px solid var(--line);
+}
+
+.chatAgent {
+  align-self: flex-end;
+  background: var(--brand-50);
+  border-radius: 8px 8px 2px 8px;
+  color: var(--brand-500);
+  border-color: var(--brand-300);
+}
+
+.phoneInputBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--muted);
+  border: 1px solid var(--line);
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+}
+
+.inputPlaceholder {
+  font-size: 0.55rem;
+  color: var(--ink-2);
+}
+
+.phoneInputBar i {
+  font-size: 0.6rem;
+  color: var(--brand-500);
+}
+
+/* Breakpoints */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .cardDouble {
+    grid-column: span 1;
+  }
+  .cardTriple {
+    grid-column: span 1;
+  }
+  .yellowCardWrapper {
+    grid-column: span 2;
+  }
+  .emptyHeader {
+    display: none;
+  }
+  .yellowCard {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .cardDouble,
+  .cardTriple,
+  .yellowCardWrapper {
+    grid-column: span 1;
+  }
+  .emptyHeader {
+    display: none;
+  }
+  .yellowCard {
+    min-height: 220px;
+  }
+}
