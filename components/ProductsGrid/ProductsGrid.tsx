@@ -2,17 +2,23 @@ import { products } from "@/lib/services";
 import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
 import styles from "./ProductsGrid.module.css";
 
-export default function ProductsGrid() {
+interface ProductsGridProps {
+  hideHeader?: boolean;
+}
+
+export default function ProductsGrid({ hideHeader }: ProductsGridProps) {
   return (
-    <section className="section" id="products" style={{ background: "var(--muted)" }}>
+    <section className="section" id="products" style={{ background: hideHeader ? "transparent" : "var(--muted)" }}>
       <div className="container-xxl">
-        <RevealOnScroll>
-          <div className={styles.head}>
-            <span className="eyebrow">Our Products</span>
-            <h2>Premium IT Products for Modern Businesses</h2>
-            <p className="lead">Carefully chosen hardware, security and software stack — sourced, installed and supported.</p>
-          </div>
-        </RevealOnScroll>
+        {!hideHeader && (
+          <RevealOnScroll>
+            <div className={styles.head}>
+              <span className="eyebrow">Our Products</span>
+              <h2>Premium IT Products for Modern Businesses</h2>
+              <p className="lead">Carefully chosen hardware, security and software stack — sourced, installed and supported.</p>
+            </div>
+          </RevealOnScroll>
+        )}
         <div className={styles.grid}>
           {products.map((p, i) => (
             <RevealOnScroll key={p.title} delay={i * 0.05}>

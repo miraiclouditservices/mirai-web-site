@@ -6,8 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
 export default function RevealOnScroll({
-  children, delay = 0, y = 24,
-}: { children: ReactNode; delay?: number; y?: number }) {
+  children, delay = 0, y = 24, style, className
+}: { children: ReactNode; delay?: number; y?: number; style?: React.CSSProperties; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const el = ref.current;
@@ -22,5 +22,5 @@ export default function RevealOnScroll({
     );
     return () => { tween.scrollTrigger?.kill(); tween.kill(); };
   }, [delay, y]);
-  return <div ref={ref} style={{ height: "100%" }}>{children}</div>;
+  return <div ref={ref} style={{ height: "100%", ...style }} className={className}>{children}</div>;
 }
