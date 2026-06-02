@@ -4,9 +4,9 @@ import Link from "next/link";
 import Script from "next/script";
 import Breadcrumbs from "@/components/Breadcrumbs/Breadcrumbs";
 import RevealOnScroll from "@/components/RevealOnScroll/RevealOnScroll";
-import styles from "./cloud.module.css";
+import styles from "./network.module.css";
 
-export default function CloudServicePage() {
+export default function NetworkServicePage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -15,97 +15,97 @@ export default function CloudServicePage() {
 
   const servicesList = [
     {
-      title: "Cloud Infrastructure Design & Deployment",
-      desc: "Build a secure, scalable, and high-performance cloud environment tailored to your business.",
+      title: "LAN/WAN Infrastructure Design & Deployment",
+      desc: "Custom LAN/WAN topologies designed for optimum throughput, low latency, and ease of expansion.",
       bullets: [
-        "Cloud architecture planning & deployment",
-        "Auto-scaling infrastructure for performance",
-        "High availability & disaster-ready systems",
-        "Optimized storage & network design"
+        "Structured fiber & copper cabling",
+        "Switching & routing architecture",
+        "Core network optimization",
+        "Redundant path design"
       ],
-      icon: "stack"
+      icon: "diagram-3"
     },
     {
-      title: "Data Backup, Disaster Recovery & Replication",
-      desc: "Ensure zero data loss and business continuity with enterprise-grade backup solutions.",
+      title: "Secure VPN & Remote Access",
+      desc: "Securely connect branch offices and remote workers with enterprise-grade encrypted VPNs.",
       bullets: [
-        "Automated cloud backups with versioning",
-        "Geo-redundant replication across regions",
-        "Disaster recovery planning & failover systems",
-        "Business continuity solutions"
+        "Site-to-site IPsec VPNs",
+        "SSL VPNs for remote workers",
+        "Multi-factor authentication (MFA)",
+        "Zero Trust network access (ZTNA)"
       ],
-      icon: "database"
+      icon: "shield-lock"
     },
     {
-      title: "Hybrid & Private Cloud Solutions",
-      desc: "Seamlessly integrate on-premises infrastructure with cloud platforms.",
+      title: "Enterprise Wireless Solutions",
+      desc: "High-density office and campus-wide Wi-Fi networks designed for seamless roaming.",
       bullets: [
-        "Hybrid cloud architecture",
-        "Secure private cloud environments",
-        "Real-time data synchronization",
-        "Workload portability & flexibility"
+        "RF site surveys & heatmaps",
+        "High-capacity Access Points (APs)",
+        "Guest portal & onboarding",
+        "Seamless roaming protocols"
       ],
-      icon: "cloud"
+      icon: "wifi"
     },
     {
-      title: "Cloud Email Hosting Solutions",
-      desc: "Professional business email with high security and reliability.",
+      title: "Firewall & Network Security",
+      desc: "Protect your network perimeter from intrusions, malware, and unauthorized access.",
       bullets: [
-        "Microsoft 365 & Google Workspace setup",
-        "Custom domain email hosting",
-        "Spam protection & email encryption",
-        "99.99% uptime guarantee"
+        "Next-Gen Firewall (NGFW) setup",
+        "Intrusion Prevention Systems (IPS)",
+        "Web filtering & application control",
+        "Regular security patch updates"
       ],
-      icon: "envelope"
+      icon: "shield-shaded"
     },
     {
-      title: "Cloud Storage & File Sharing",
-      desc: "Secure, scalable, and accessible cloud file storage solutions.",
+      title: "Network Monitoring & AMC",
+      desc: "Ensure maximum uptime with proactive network health tracking and rapid incident response.",
       bullets: [
-        "Anywhere access (mobile/web/desktop)",
-        "Version control & backup",
-        "Role-based access & permissions",
-        "Secure file sharing"
-      ],
-      icon: "folder-check"
-    },
-    {
-      title: "Cloud Monitoring & Cost Optimization",
-      desc: "Maximize performance while reducing costs.",
-      bullets: [
-        "Real-time cloud monitoring",
-        "Performance analytics & optimization",
-        "Auto-scaling recommendations",
-        "Budget tracking & cost control"
+        "24/7 NOC monitoring",
+        "Bandwidth usage analysis",
+        "Hardware maintenance AMC",
+        "On-site troubleshooting support"
       ],
       icon: "activity"
+    },
+    {
+      title: "SD-WAN & Cloud Connectivity",
+      desc: "Optimize cloud access and branch-to-branch communications with software-defined networking.",
+      bullets: [
+        "SD-WAN setup & deployment",
+        "Cloud direct connect lines",
+        "Dynamic path selection",
+        "Reduced MPLS costs"
+      ],
+      icon: "cloud"
     }
   ];
 
   const faqs = [
     {
-      q: "Is cloud computing secure for businesses?",
-      a: "Yes, we implement advanced security protocols, IAM role permissions, end-to-end encryption, and compliance measures to ensure your data is fully protected."
+      q: "Which firewall brands do you configure?",
+      a: "We deploy and manage Fortinet, Sophos, SonicWall, and Cisco firewalls, custom-fit for your budget and performance requirements."
     },
     {
-      q: "Can you migrate my existing system to the cloud?",
-      a: "Yes, we provide seamless cloud migration services. We analyze your workloads and carry out migration with zero downtime for your active users."
+      q: "Can you support remote site connectivity?",
+      a: "Yes, we set up secure site-to-site IPsec VPNs and SD-WAN networks to connect multiple branches securely with unified routing policies."
     },
     {
-      q: "Do you provide 24/7 support?",
-      a: "Yes, we offer round-the-clock cloud monitoring, rapid disaster recovery, and proactive helpdesk support services."
+      q: "Do you offer annual maintenance contracts (AMC)?",
+      a: "Yes, we provide comprehensive and non-comprehensive Network AMC packages with defined SLA turnaround times and proactive support."
     },
     {
-      q: "Which cloud platforms do you support?",
-      a: "We work directly with AWS (Amazon Web Services), Microsoft Azure, and Google Cloud Platform (GCP)."
+      q: "How do you guarantee wireless coverage?",
+      a: "We conduct professional wireless site surveys and heatmap analysis to ensure optimal placement of access points without signal drops or dead zones."
     }
   ];
 
   const ld = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Cloud Services in Hyderabad",
-    description: "Secure, Scalable & Cost-Optimized Cloud Computing Solutions in Hyderabad.",
+    name: "Network Services in Hyderabad",
+    description: "Secure, High-Speed & Enterprise LAN/WAN/VPN Networking Solutions in Hyderabad.",
     provider: { "@type": "Organization", name: "Mirai Cloud", telephone: "+91 9100218218" },
     areaServed: "Hyderabad, India"
   };
@@ -119,7 +119,7 @@ export default function CloudServicePage() {
             <Breadcrumbs items={[
               { label: "Home", href: "/" },
               { label: "Services", href: "/services" },
-              { label: "Cloud Services" },
+              { label: "Network Services" },
             ]} />
           </div>
 
@@ -130,15 +130,15 @@ export default function CloudServicePage() {
                 <span className={styles.heroBadgeText}>Hyderabad - Miyapur - Pan-India</span>
               </div>
               <h1 className={styles.heroTitle}>
-                Cloud Services
+                Network Services
               </h1>
               <p className={styles.heroLead}>
-                Transform your business with advanced cloud computing across Hyderabad, Miyapur, and India. We deliver AWS, Azure, and Google Cloud solutions tailored for performance, security, and growth.
+                Establish a robust network infrastructure across Hyderabad, Miyapur, and India. We deliver LAN/WAN deployment, secure VPN tunnels, enterprise Wi-Fi, and 24/7 proactive monitoring.
               </p>
 
               <div className={styles.heroActions}>
                 <Link href="/contact" className={styles.heroBtnPrimary}>
-                  Get Free Cloud Consultation &rarr;
+                  Get Free Network Consultation &rarr;
                 </Link>
                 <a href="tel:+919100218218" className={styles.heroBtnSecondary}>
                   <i className="bi bi-telephone" /> +91 9100218218
@@ -147,13 +147,13 @@ export default function CloudServicePage() {
 
               <div className={styles.heroTrust}>
                 <span className={styles.trustItem}>
-                  <i className="bi bi-check" /> 99.99% uptime SLA
+                  <i className="bi bi-check" /> 99.99% network uptime
                 </span>
                 <span className={styles.trustItem}>
-                  <i className="bi bi-check" /> Zero-downtime migration
+                  <i className="bi bi-check" /> Zero-packet-loss assurance
                 </span>
                 <span className={styles.trustItem}>
-                  <i className="bi bi-check" /> 24/7 managed operations
+                  <i className="bi bi-check" /> 24/7 managed NOC operations
                 </span>
               </div>
             </RevealOnScroll>
@@ -162,26 +162,26 @@ export default function CloudServicePage() {
               <div className={styles.heroCard}>
                 <div className={styles.cardBadge}>
                   <span className={styles.cardBadgeDot} />
-                  <span>All systems healthy</span>
+                  <span>NOC Status: Active</span>
                 </div>
-
+                
                 <div className={styles.cardGraphic}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/glowing-cloud.png" alt="Cloud Network Topology Visualization" />
+                  <img src="/network-topology.png" alt="Network Topology and Routers Illustration" />
                 </div>
 
                 <div className={styles.cardStats}>
                   <div className={styles.cardStatCol}>
-                    <span className={styles.cardStatLabel}>Uptime</span>
-                    <span className={styles.cardStatVal}>99.99%</span>
+                    <span className={styles.cardStatLabel}>Latency</span>
+                    <span className={styles.cardStatVal}>&lt;2ms</span>
                   </div>
                   <div className={styles.cardStatCol}>
-                    <span className={styles.cardStatLabel}>Regions</span>
-                    <span className={styles.cardStatVal}>14</span>
+                    <span className={styles.cardStatLabel}>Bandwidth</span>
+                    <span className={styles.cardStatVal}>10G</span>
                   </div>
                   <div className={styles.cardStatCol}>
-                    <span className={styles.cardStatLabel}>Cost Saved</span>
-                    <span className={styles.cardStatVal}>38%</span>
+                    <span className={styles.cardStatLabel}>Packet Loss</span>
+                    <span className={styles.cardStatVal}>0%</span>
                   </div>
                 </div>
               </div>
@@ -190,13 +190,13 @@ export default function CloudServicePage() {
         </div>
       </section>
 
-      {/* Our Cloud Services Section */}
+      {/* Our Services Section */}
       <section className="section" style={{ background: "#ffffff" }}>
         <div className="container-xxl">
           <div className={styles.sectionHead}>
-            <span className={styles.infraEyebrow}>OUR CLOUD SERVICES</span>
-            <h2>Everything you need to run on the cloud — built right.</h2>
-            <p>From architecture to operations, our team delivers production-grade cloud environments designed for performance, security, and growth.</p>
+            <span className={styles.infraEyebrow}>OUR NETWORK SERVICES</span>
+            <h2>Everything you need for enterprise-grade networking.</h2>
+            <p>From copper/fiber cabling to secure VPN tunnels and central management, our network engineering team delivers seamless operations.</p>
           </div>
 
           <div className={styles.bentoGrid}>
@@ -229,12 +229,12 @@ export default function CloudServicePage() {
             <RevealOnScroll>
               <span className={styles.infraEyebrow}>OUR EXPERTISE</span>
               <h2 className={styles.expertSectionTitle}>
-                A senior cloud team delivering performance, security, and scalability.
+                A senior network team delivering performance, security, and reliability.
               </h2>
             </RevealOnScroll>
             <RevealOnScroll delay={0.1}>
               <p className={styles.expertSectionLead}>
-                We work across multi-cloud, hybrid, and private environments — modernizing workloads with DevOps, automation, and SRE best practices.
+                We work across diverse routing, switching, and firewall environments — designing, deploying, and auditing network systems following global Cisco and ITIL standards.
               </p>
             </RevealOnScroll>
           </div>
@@ -243,7 +243,7 @@ export default function CloudServicePage() {
             <RevealOnScroll>
               <div className={styles.expertGraphicCard}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/expertise-graphic.png" alt="Cloud database security shield illustration" />
+                <img src="/network-expert.png" alt="Server racks switches fiber cabling illustration" />
               </div>
             </RevealOnScroll>
 
@@ -251,33 +251,33 @@ export default function CloudServicePage() {
               <div className={styles.expertGridBlock}>
                 <div className={styles.expertCell}>
                   <i className="bi bi-globe" />
-                  <h4>Multi-Cloud Environments</h4>
-                  <span>AWS · Azure · GCP</span>
+                  <h4>Network Infrastructure</h4>
+                  <span>Cisco · Aruba · Juniper</span>
                 </div>
                 <div className={styles.expertCell}>
                   <i className="bi bi-arrow-right" />
-                  <h4>Cloud Migration & Modernization</h4>
+                  <h4>Migration & Modernization</h4>
                   <span>Zero-downtime cutovers</span>
                 </div>
                 <div className={styles.expertCell}>
                   <i className="bi bi-shield" />
-                  <h4>Enterprise Security & Compliance</h4>
-                  <span>ISO · SOC2 · GDPR</span>
+                  <h4>Security & Compliance</h4>
+                  <span>ISO · NIST · Threat Intel</span>
                 </div>
                 <div className={styles.expertCell}>
                   <i className="bi bi-cpu" />
-                  <h4>DevOps, CI/CD & Automation</h4>
-                  <span>Terraform · PowerShell</span>
+                  <h4>SD-WAN & Automation</h4>
+                  <span>Ansible · Cisco DNA</span>
                 </div>
                 <div className={styles.expertCell}>
                   <i className="bi bi-stars" />
-                  <h4>Cloud-native & SRE Practices</h4>
-                  <span>Kubernetes · Observability</span>
+                  <h4>High-Density Wireless</h4>
+                  <span>Wi-Fi 6 · Campus RF</span>
                 </div>
                 <div className={styles.expertCell}>
                   <i className="bi bi-lock" />
-                  <h4>24/7 Managed Operations</h4>
-                  <span>Round-the-clock support</span>
+                  <h4>24/7 Managed NOC</h4>
+                  <span>Proactive monitoring</span>
                 </div>
               </div>
             </RevealOnScroll>
@@ -292,23 +292,23 @@ export default function CloudServicePage() {
             <div className={styles.infraBanner}>
               <div className={styles.infraOverlay}>
                 <span className={styles.infraEyebrow}>Enterprise-Grade Infrastructure</span>
-                <h2 className={styles.infraTitle}>Tier-IV data centers. Global edge. Zero compromise.</h2>
+                <h2 className={styles.infraTitle}>Carrier-neutral paths. High-speed backbones. Zero compromise.</h2>
                 <p className={styles.infraText}>
-                  Workloads run on geo-redundant infrastructure across 14+ regions with encryption-at-rest, IAM hardening, and 24/7 SOC monitoring.
+                  Our network deployments use enterprise Cisco, Sophos, and Aruba hardware with geo-redundant links and automated failovers.
                 </p>
 
                 <div className={styles.infraStatsRow}>
-                  <div className={styles.infraStatCol}>
-                    <span className={styles.infraStatVal}>14+</span>
-                    <span className={styles.infraStatLabel}>Regions</span>
-                  </div>
                   <div className={styles.infraStatCol}>
                     <span className={styles.infraStatVal}>99.99%</span>
                     <span className={styles.infraStatLabel}>Uptime SLA</span>
                   </div>
                   <div className={styles.infraStatCol}>
+                    <span className={styles.infraStatVal}>&lt;2ms</span>
+                    <span className={styles.infraStatLabel}>Local Latency</span>
+                  </div>
+                  <div className={styles.infraStatCol}>
                     <span className={styles.infraStatVal}>&lt;15min</span>
-                    <span className={styles.infraStatLabel}>Response</span>
+                    <span className={styles.infraStatLabel}>NOC Response</span>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ export default function CloudServicePage() {
           <div className={styles.sectionHead}>
             <span className={styles.infraEyebrow}>FAQ SECTION</span>
             <h2>Frequently Asked Questions</h2>
-            <p>Clear, direct answers about our cloud deployments and integration workflows.</p>
+            <p>Clear, direct answers about our network integrations and routing policies.</p>
           </div>
 
           <div className={styles.faqWrapper}>
@@ -347,11 +347,11 @@ export default function CloudServicePage() {
         <div className="container-xxl">
           <div className={styles.ctaBanner}>
             <div className={styles.ctaBadge}>
-              <span>🚀 Ready to move your business to the cloud?</span>
+              <span>🚀 Ready to upgrade your business network?</span>
             </div>
-            <h2>Get a Free Cloud Readiness Assessment in Hyderabad</h2>
+            <h2>Get a Free Network Infrastructure Assessment in Hyderabad</h2>
             <p>
-              Talk to a senior cloud architect. No obligation — just a clear roadmap for your cloud journey.
+              Talk to a senior network engineer. No obligation — just a clear roadmap for your network expansion and security.
             </p>
             <div className={styles.ctaActions}>
               <Link href="/contact" className={styles.ctaBtnPrimary}>
@@ -365,7 +365,7 @@ export default function CloudServicePage() {
         </div>
       </section>
 
-      <Script id="ld-service-cloud" type="application/ld+json"
+      <Script id="ld-service-network" type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
     </>
   );

@@ -1,6 +1,78 @@
-.wrap { padding: clamp(40px, 6vw, 80px) 0 0; background: linear-gradient(180deg, #fff, #f4f8ff); }
-.head { max-width: 720px; margin: 0 auto 1.5rem; text-align: center; }
+.wrap {
+  position: relative;
+  padding: clamp(60px, 8vw, 120px) 0 clamp(40px, 6vw, 80px);
+  background: radial-gradient(circle at 50% -20%, #eaf2ff, #fff 60%);
+  overflow: hidden;
+}
+
+.head {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+  z-index: 10;
+}
+
+.eyebrowContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(30, 107, 255, 0.08);
+  padding: 0.6rem 1.25rem;
+  border-radius: 99px;
+  border: 1px solid rgba(30, 107, 255, 0.15);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(30, 107, 255, 0.05);
+}
+
+.eyebrowText {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brand-500);
+  margin: 0;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.25rem;
+}
+
+.subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.canvasWrapper {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff, #f8faff);
+  border: 1px solid rgba(30, 107, 255, 0.12);
+  box-shadow: 0 30px 60px rgba(10, 31, 68, 0.08), 0 10px 20px rgba(30, 107, 255, 0.05);
+}
+
 .canvas {
-  height: clamp(320px, 50vw, 520px); width: 100%;
-  background: radial-gradient(900px 400px at 50% 100%, rgba(30,107,255,.15), transparent 70%);
+  height: clamp(400px, 60vw, 600px);
+  width: 100%;
+}
+
+.canvasOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(255, 255, 255, 0.4) 100%);
+  pointer-events: none;
 }

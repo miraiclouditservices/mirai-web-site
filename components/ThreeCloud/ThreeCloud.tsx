@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, Points, PointMaterial } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { motion } from "framer-motion";
 import styles from "./ThreeCloud.module.css";
 
 function Nodes() {
@@ -66,21 +67,39 @@ export default function ThreeCloud() {
   return (
     <section className={styles.wrap} aria-label="Cloud and network topology visualization">
       <div className="container-xxl">
-        <div className={styles.head}>
-          <span className="eyebrow">Cloud + Network</span>
-          <h2>An interactive view of your future infrastructure</h2>
-          <p className="lead">Distributed cloud, secure network topology, real-time monitoring — visualized.</p>
+        <motion.div 
+          className={styles.head}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className={styles.eyebrowContainer}>
+             <i className="bi bi-cloud-network" style={{ color: "var(--brand-500)", fontSize: "1.1rem" }}></i>
+             <span className={styles.eyebrowText}>Cloud + Network</span>
+          </div>
+          <h2 className={styles.title}>An interactive view of your future infrastructure</h2>
+          <p className={styles.subtitle}>Distributed cloud, secure network topology, real-time monitoring — visualized.</p>
+        </motion.div>
+      </div>
+      <motion.div 
+         className={styles.canvasWrapper}
+         initial={{ opacity: 0, scale: 0.95, y: 40 }}
+         whileInView={{ opacity: 1, scale: 1, y: 0 }}
+         viewport={{ once: true, margin: "-50px" }}
+         transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+      >
+        <div className={styles.canvas} aria-hidden>
+          <Canvas dpr={[1, 1.6]} camera={{ position: [0, 1.4, 6], fov: 55 }}>
+            <ambientLight intensity={0.6} />
+            <pointLight position={[5, 5, 5]} intensity={1.2} color="#00d4ff" />
+            <pointLight position={[-5, -3, -5]} intensity={0.8} color="#1e6bff" />
+            <Starfield />
+            <Nodes />
+          </Canvas>
         </div>
-      </div>
-      <div className={styles.canvas} aria-hidden>
-        <Canvas dpr={[1, 1.6]} camera={{ position: [0, 1.4, 6], fov: 55 }}>
-          <ambientLight intensity={0.6} />
-          <pointLight position={[5, 5, 5]} intensity={1.2} color="#00d4ff" />
-          <pointLight position={[-5, -3, -5]} intensity={0.8} color="#1e6bff" />
-          <Starfield />
-          <Nodes />
-        </Canvas>
-      </div>
+        <div className={styles.canvasOverlay}></div>
+      </motion.div>
     </section>
   );
 }

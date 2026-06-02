@@ -1,6 +1,6 @@
 .hero {
   background-color: #020b1e;
-  background-image: 
+  background-image:
     radial-gradient(circle at 85% 50%, rgba(30, 107, 255, 0.15) 0%, transparent 60%),
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
@@ -201,9 +201,20 @@
 }
 
 @keyframes pulse-green {
-  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
 
 .cardGraphic {
@@ -253,7 +264,7 @@
   color: #ffffff;
 }
 
-/* Our Cloud Services */
+/* Our Services Header */
 .sectionHead {
   text-align: center;
   max-width: 720px;
@@ -512,7 +523,7 @@
 
 .ctaBanner {
   background-color: #021231;
-  background-image: 
+  background-image:
     radial-gradient(circle at 90% 85%, rgba(0, 212, 255, 0.22) 0%, transparent 55%),
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
@@ -717,24 +728,30 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+
   .bentoGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .bottomCtaSection {
     padding-bottom: 80px;
   }
+
   .infraOverlay {
     padding: 3.5rem 2.5rem;
   }
+
   .expertHeaderGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: flex-start;
   }
+
   .expertMainGrid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
   .expertGraphicCard {
     height: 380px;
   }
@@ -744,6 +761,7 @@
   .infraStatsRow {
     gap: 2rem;
   }
+
   .infraStatCol:not(:last-child)::after {
     display: none;
   }
@@ -753,40 +771,51 @@
   .bentoGrid {
     grid-template-columns: 1fr;
   }
+
   .heroCard {
     padding: 1.25rem;
   }
+
   .cardStats {
     padding: 0.75rem;
   }
+
   .ctaBanner {
     padding: 3.5rem 1.5rem;
   }
+
   .ctaActions {
     flex-direction: column;
     gap: 1rem;
   }
+
   .ctaActions a {
     width: 100%;
     justify-content: center;
   }
+
   .heroActions {
     flex-direction: column;
     gap: 1rem;
   }
+
   .heroActions a {
     width: 100%;
     justify-content: center;
   }
+
   .infraOverlay {
     padding: 2.5rem 1.5rem;
   }
+
   .expertGridBlock {
     grid-template-columns: 1fr;
   }
+
   .expertCell:nth-child(odd) {
     border-right: none;
   }
+
   .expertCell:not(:last-child) {
     border-bottom: 1px solid var(--line);
   }

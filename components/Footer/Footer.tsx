@@ -9,11 +9,13 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className="container-xxl">
         <div className={styles.grid}>
-          <div>
-            <div className={styles.brand}>
-              <span className={styles.mark}>M</span>
-              <span>Mirai<strong>Cloud</strong></span>
-            </div>
+          <div className={styles.brandCol}>
+            <Link href="/" className={styles.brand}>
+              <div className={styles.logoCircle}>
+                <img src="/mirai_logo.png" alt="Mirai Logo" className={styles.logoImg} />
+              </div>
+              <span className={styles.brandText}>Mirai<strong>Cloud</strong></span>
+            </Link>
             <p className={styles.about}>{site.description}</p>
             <div className={styles.social}>
               <a href={site.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener"><i className="bi bi-linkedin" /></a>
@@ -24,10 +26,10 @@ export default function Footer() {
           <div>
             <h4>Services</h4>
             <ul>
-              {services.slice(0, 6).map(s => (
+              {services.slice(0, 5).map(s => (
                 <li key={s.slug}><Link href={`/services/${s.slug}`}>{s.title}</Link></li>
               ))}
-              <li><Link href="/services">All Services →</Link></li>
+              <li><Link href="/services" className={styles.accentLink}>View All Services <i className="bi bi-arrow-right" /></Link></li>
             </ul>
           </div>
           <div>
@@ -39,17 +41,29 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Get in touch</h4>
+            <h4>Connect</h4>
             <ul className={styles.contactList}>
-              <li><i className="bi bi-geo-alt" /> {site.address}</li>
-              <li><i className="bi bi-telephone" /> <a href={`tel:${site.phone.replace(/\s/g,"")}`}>{site.phone}</a></li>
-              <li><i className="bi bi-envelope" /> <a href={`mailto:${site.email}`}>{site.email}</a></li>
+              <li>
+                <div className={styles.iconBox}><i className="bi bi-geo-alt" /></div>
+                <span>{site.address}</span>
+              </li>
+              <li>
+                <div className={styles.iconBox}><i className="bi bi-telephone" /></div>
+                <a href={`tel:${site.phone.replace(/\s/g,"")}`}>{site.phone}</a>
+              </li>
+              <li>
+                <div className={styles.iconBox}><i className="bi bi-envelope" /></div>
+                <a href={`mailto:${site.email}`}>{site.email}</a>
+              </li>
             </ul>
           </div>
         </div>
         <div className={styles.bottom}>
-          <span>© {year} {site.name}. All rights reserved.</span>
-          <span>Crafted for performance & SEO.</span>
+          <div className={styles.copyright}>© {year} {site.name}. All rights reserved.</div>
+          <div className={styles.legal}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

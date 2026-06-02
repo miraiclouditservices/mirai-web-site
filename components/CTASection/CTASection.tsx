@@ -2,21 +2,30 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import styles from "./CTASection.module.css";
 
-export default function CTASection() {
+interface CTAProps {
+  pillText?: string;
+  title?: string;
+  desc?: string;
+}
+
+export default function CTASection({ pillText, title, desc }: CTAProps) {
   return (
     <section className={styles.wrap}>
       <div className="container-xxl">
         <div className={styles.card}>
-          <div>
-            <span className="eyebrow" style={{ color: "var(--accent)" }}>End-to-End IT Solutions</span>
-            <h2>Get a Free IT Audit in Hyderabad Today</h2>
-            <p>Optimize your business operations with expert IT solutions tailored to your needs.</p>
+          <div className={styles.pill}>
+            {pillText || "🚀 Ready to upgrade your IT infrastructure?"}
           </div>
+          <h2>{title || "Get a Free IT Infrastructure Assessment in Hyderabad"}</h2>
+          <p>{desc || "Talk to a senior IT engineer. No obligation — just a clear roadmap for your digital expansion and security."}</p>
+          
           <div className={styles.actions}>
-            <a href={`tel:${site.phone.replace(/\s/g,"")}`} className="btn-brand">
-              <i className="bi bi-telephone-fill" /> Call {site.phone}
+            <Link href="/contact" className={styles.btnPrimary}>
+              Book Free Consultation &rarr;
+            </Link>
+            <a href={`tel:${site.phone.replace(/\s/g,"")}`} className={styles.btnOutline}>
+              <i className="bi bi-telephone" /> {site.phone}
             </a>
-            <Link href="/contact" className={styles.ghostLight}>Book Free Consultation</Link>
           </div>
         </div>
       </div>

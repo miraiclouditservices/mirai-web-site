@@ -7,7 +7,6 @@ import ProductsGrid from "@/components/ProductsGrid/ProductsGrid";
 import StatsCounter from "@/components/StatsCounter/StatsCounter";
 import CTASection from "@/components/CTASection/CTASection";
 
-const ThreeCloud = dynamic(() => import("@/components/ThreeCloud/ThreeCloud"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "IT Services in Hyderabad — Cloud, Security, Networking",
@@ -20,7 +19,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ThreeCloud />
       <ServicesGrid />
       <FeatureGrid />
       <StatsCounter />
